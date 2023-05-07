@@ -7,9 +7,8 @@ load_dotenv()
 SHODAN_API_KEY = os.getenv('SHODAN_API_KEY')
 api = shodan.Shodan(SHODAN_API_KEY)
 
-QUERY = 'port:3389'
+QUERY = 'country:"US"'
 
-# Search for devices with RDP port open
 try:
     results = api.search(QUERY)
     print(f"Total results found: {results['total']}\n")
